@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import ShadowView from 'react-native-simple-shadow-view'
 
 
 export default class App extends React.Component {
@@ -30,9 +31,15 @@ export default class App extends React.Component {
           }}
         /> */}
 
-        <LinearGradient colors={['#E53430', '#F2795A', '#FEB37E']} style={[styles.linearGradient, styles.supercenter]}>
-          <View style={{
-            height: 300, width: 180, backgroundColor: 'white', borderRadius: 16, padding: 20, transform: [{ rotate: `${this.state.z}deg` }]
+        <LinearGradient colors={['#E53430', '#FEB37E', '#f5f5f5']} style={[styles.linearGradient, styles.supercenter]}>
+
+          <ShadowView style={{
+            height: 300, width: 180, backgroundColor: 'white', borderRadius: 16, padding: 20, transform: [{ rotate: `${this.state.z}deg`, }],
+            shadowColor: '#E53430',
+            shadowOpacity: 1,
+            shadowRadius: 100,
+            shadowOffset: { width: 0, height: 0 },
+            marginTop: 100
           }}>
 
             <View>
@@ -49,7 +56,9 @@ export default class App extends React.Component {
               <Text>Table</Text>
             </View>
 
-          </View>
+
+          </ShadowView>
+
 
 
           <View>
@@ -68,7 +77,7 @@ export default class App extends React.Component {
           </View>
 
         </LinearGradient>
-      </View>
+      </View >
     );
   }
 }
